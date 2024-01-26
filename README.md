@@ -1,1 +1,2 @@
 # YANTRA-learning-in-python.
+The primary goal of this repository is to provide a starting point for participants to kickstart their journey into autonomous robotics. The code included here serves as a rudimentary introduction, offering foundational concepts to help participants grasp essential elements. It is crucial to note that the code in this repository is not intended for use in the final competition; instead, it acts as a preliminary resource for participants to build upon.
