@@ -5,7 +5,7 @@ from time import sleep
 # find which of following color exists and where
 def identify_colors(frame):
     # Define color ranges
-    lower_red = np.array([0, 100, 100])
+    lower_red = np.array([0, 100, 100]) 
     upper_red = np.array([10, 255, 255])
 
     lower_green = np.array([40, 100, 100])
@@ -30,8 +30,8 @@ def identify_colors(frame):
     mask_white = cv2.inRange(hsv_image, lower_white, upper_white)
     mask_black = cv2.inRange(hsv_image, lower_black, upper_black)
 
-    # Get pixel coordinates for each color
-    red_pixels = np.column_stack(np.where(mask_red > 0))
+    # Get pixel coordinates for each color; help to find the coordinates of the box where the bot needs to move.
+    red_pixels = np.column_stack(np.where(mask_red > 0)) 
     green_pixels = np.column_stack(np.where(mask_green > 0))
     blue_pixels = np.column_stack(np.where(mask_blue > 0))
     white_pixels = np.column_stack(np.where(mask_white > 0))
@@ -39,7 +39,7 @@ def identify_colors(frame):
 
     return red_pixels, green_pixels, blue_pixels, white_pixels, black_pixels
 
-# convert pixel color to where it lies in left, middle or right of screen
+# convert pixel color to where it lies in left, middle or right of screen; here it helps to go the majority of the colour in the specific part of the arena. 
 def color_position(coordinates,image_width):
     if len(coordinates) == 0:
         return None
